@@ -6,7 +6,7 @@ export const getModels = async (req,res)=>{
 
   const {product_name} = req.body
   if(product_name){
-    const Model = await DataModel.find({product_name});
+    const Model = await DataModel.find({"product_name" : {$regex : product_name}});
     if(Model.length > 0){
       res.json({"product_list":Model})
     }
