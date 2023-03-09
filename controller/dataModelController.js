@@ -21,7 +21,7 @@ export const getModels = async (req,res)=>{
 
 
 export const getAllModels = async (req,res)=>{
-  const Model = await DataModel.find({},{product_name:1,_id:1,product_img:1});
+  const Model = await DataModel.find({},{product_name:1,_id:1,product_img:1,step_count:1});
     if(Model.length > 0){
       res.json({"product_list":Model})
     }
